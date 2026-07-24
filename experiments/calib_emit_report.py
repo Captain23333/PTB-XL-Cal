@@ -124,7 +124,7 @@ def section_alignment():
     pareto = maybe_read_csv("results/block2_q2_pareto.csv")
     fail = maybe_read_csv("results/block3_q3_failure_cells.csv")
     sp = maybe_json("results/block4_spearman.json")
-    s = ["## Alignment with pre-registered questions",
+    s = ["## Alignment with internally prespecified questions",
          "",
          "| Claim | Evidence path | Status |",
          "|---|---|---|"]

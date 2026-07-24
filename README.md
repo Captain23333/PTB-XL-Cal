@@ -1,7 +1,7 @@
 # PTB-XL-Cal: Multi-label Calibration Benchmark for ECG Classification
 
 Code release accompanying the paper "PTB-XL-Cal: A Calibration Benchmark for
-Multi-Label ECG Classification, with a Prevalence-Driven Failure Mode".
+Multi-Label ECG Classification, with a Prevalence-Associated Failure Mode".
 
 This is the **code-only** open-source package: raw datasets and trained model
 checkpoints are *not* included (see [Data](#data) and
@@ -11,11 +11,13 @@ checkpoints are *not* included (see [Data](#data) and
 
 Six post-hoc probability calibrators (C0 raw, C1 single-scalar temperature,
 C2 per-label temperature, C3 per-label affine, C4 family-pooled affine, C5
-per-label isotonic regression) applied to nine training methods across three
-backbones (SimpleResNet1D, InceptionTime, and an ECG-FM linear probe) on
-PTB-XL, with an external validation pass on Chapman-Shaoxing. Full protocol
-details are in the paper; the locked metric suite and selection rule are
-implemented in `src/calibration_metrics.py` and `src/calib_pipeline.py`.
+per-label isotonic regression) were applied to eight SimpleResNet1D training
+methods and an ECG-FM linear probe (150 primary evaluations). A hard-BCE
+InceptionTime check added 18 architecture-transfer evaluations; it was not
+run across all training methods. Chapman-Shaoxing was used only for the
+external prevalence-associated check. Full protocol details are in the paper;
+the locked metric suite and selection rule are implemented in
+`src/calibration_metrics.py` and `src/calib_pipeline.py`.
 
 ## Repository layout
 
@@ -54,8 +56,10 @@ data/                   Not included -- see data/README.md for download steps
 pip install -r requirements.txt
 ```
 
-Tested with Python 3.11 and PyTorch with CUDA 12.1, but nothing here is
-CUDA-version-specific.
+The reconstructed release environment uses Python 3.10 and the pinned package
+versions in `requirements.txt`, including PyTorch 2.4.0. The evaluation
+self-test is CPU-compatible; full model training can use a compatible CUDA
+installation.
 
 Optionally set these environment variables if you don't want to run from the
 repository root:
@@ -114,6 +118,10 @@ analyses, see `experiments/calib_chapman.py`, `experiments/train_chapman.py`,
 `experiments/calib_inceptiontime*.py`, `experiments/calib_prevalence_ablation.py`,
 `experiments/calib_ece_robustness.py`, and `experiments/calib_selector_stability.py`
 respectively -- each has a docstring describing exactly what it computes.
+The aggregate Chapman result is included, but the exact historical
+`chapman_metadata.csv` (including the 47-code mapping and frozen split) was
+not present in the project materials and therefore is not claimed as
+independently reproducible by this release. See `data/README.md`.
 
 ## What's not included
 

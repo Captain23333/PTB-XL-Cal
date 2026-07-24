@@ -9,8 +9,8 @@ licenses, so we only document how to fetch them and where to place them.
 - Source: PhysioNet, "PTB-XL, a large publicly available electrocardiography
   dataset", version 1.0.3.
 - Page: https://physionet.org/content/ptb-xl/1.0.3/
-- License: Open Data Commons Attribution License v1.0 (see the `LICENSE.txt`
-  included in the PhysioNet download).
+- License: Creative Commons Attribution 4.0 International.
+- DOI: https://doi.org/10.13026/kfzx-aw45
 - Citation: Wagner et al., "PTB-XL, a large publicly available
   electrocardiography dataset", Scientific Data, 2020.
 
@@ -45,7 +45,8 @@ download straight into `data/`.
 - Source: PhysioNet, "A large scale 12-lead electrocardiogram database for
   arrhythmia study", version 1.0.0.
 - Page: https://physionet.org/content/ecg-arrhythmia/1.0.0/
-- License: Open Data Commons Attribution License v1.0.
+- License: Creative Commons Attribution 4.0 International.
+- DOI: https://doi.org/10.13026/wgex-er52
 - Citation: Zheng et al., "A 12-lead electrocardiogram database for arrhythmia
   research covering more than 10,000 patients", Scientific Data, 2020.
 
@@ -55,11 +56,20 @@ cd data/chapman
 wget -r -N -c -np https://physionet.org/files/ecg-arrhythmia/1.0.0/
 ```
 
-`src/data_chapman.py` expects the flattened records plus a
-`chapman_metadata.csv` file under `data/chapman/` (built by
-`experiments/train_chapman.py` / `experiments/calib_chapman.py` from the raw
-PhysioNet metadata -- see the header comments in those scripts for the exact
-label-mapping and train/test split logic used).
+`src/data_chapman.py` expects the flattened records plus the exact
+`chapman_metadata.csv` used by the experiment under `data/chapman/`. That
+file must contain `record_path`, `split`, and the five binary columns `NORM`,
+`MI`, `STTC`, `CD`, and `HYP`.
+
+Important reproducibility limitation: the historical metadata file, its exact
+47-SNOMED-code-to-family mapping, and its frozen 70/15/15 assignment were not
+present in the project materials from which this public package was assembled.
+The training and calibration scripts consume that file but do not generate it.
+The release therefore includes the audited aggregate Chapman results without
+claiming that the exact external-validation split can presently be recreated.
+Do not substitute a newly generated split and describe it as the published
+split; archive the original metadata or rerun and clearly version a replacement
+before making a full external-reproducibility claim.
 
 ## Why data isn't included in this repository
 

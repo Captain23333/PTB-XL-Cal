@@ -146,14 +146,14 @@ def select_best_calibrator(per_calibrator_metrics):
     eces_finite = np.where(np.isfinite(eces), eces, np.inf)
     best = int(np.argmin(eces_finite))
     best_ece = eces_finite[best]
-    # 1 SE on labelwise stmt ECE (sd of per_stmt / sqrt(K_valid))
+    # Labelwise standard-error band: sd(per-statement ECE) / sqrt(K_valid).
     pse = per_calibrator_metrics[cals[best]]["per_stmt_ece"]
     valid = np.isfinite(pse)
     if valid.sum() > 1:
         se = float(np.nanstd(pse[valid]) / np.sqrt(valid.sum()))
     else:
         se = 0.0
-    # within 1 SE band
+    # Within the labelwise standard-error band.
     band = [c for c, e in zip(cals, eces_finite) if e <= best_ece + se]
     if len(band) <= 1:
         return cals[best], {"trace": "ece_unique", "band": band, "se": se}
@@ -163,9 +163,10 @@ def select_best_calibrator(per_calibrator_metrics):
     gaps_finite = np.where(np.isfinite(gaps), gaps, np.inf)
     best_g = int(np.argmin(gaps_finite))
     best_gap = gaps_finite[best_g]
-    # 1 SE on gap is not separately stored; use 5% of best as a soft band
-    se_gap = abs(best_gap) * 0.05
-    band2 = [c for c, g in zip(band, gaps_finite) if g <= best_gap + se_gap]
+    # Prespecified 5% relative tolerance around the best gap.
+    gap_tolerance = abs(best_gap) * 0.05
+    band2 = [c for c, g in zip(band, gaps_finite)
+             if g <= best_gap + gap_tolerance]
     if len(band2) <= 1:
         return band[best_g], {"trace": "ece_band->gap_unique",
                               "ece_band": band, "gap_band": band2}
