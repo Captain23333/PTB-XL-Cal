@@ -3,8 +3,9 @@
 Code release accompanying the paper "PTB-XL-Cal: A Calibration Benchmark for
 Multi-Label ECG Classification, with a Prevalence-Associated Failure Mode".
 
-This is the **code-only** open-source package: raw datasets and trained model
-checkpoints are *not* included (see [Data](#data) and
+This open-source package contains code, compact derived metadata, frozen PTB-XL
+split files, and aggregate results. Raw waveforms and trained model checkpoints
+are *not* included (see [Data](#data) and
 [What's not included](#whats-not-included) below for why, and how to get them).
 
 ## What this benchmarks
@@ -47,7 +48,8 @@ results/                Small summary CSV/JSON outputs (one row per
                          method x seed x calibrator x metric); this is what the
                          paper's tables and figures are built from. One compact
                          hard-BCE prediction fixture is included for self-test.
-data/                   Not included -- see data/README.md for download steps
+data/                   Download instructions plus frozen Chapman metadata,
+                        mapping, exclusions, and split generator
 ```
 
 ## Environment
@@ -118,15 +120,15 @@ analyses, see `experiments/calib_chapman.py`, `experiments/train_chapman.py`,
 `experiments/calib_inceptiontime*.py`, `experiments/calib_prevalence_ablation.py`,
 `experiments/calib_ece_robustness.py`, and `experiments/calib_selector_stability.py`
 respectively -- each has a docstring describing exactly what it computes.
-The aggregate Chapman result is included, but the exact historical
-`chapman_metadata.csv` (including the 47-code mapping and frozen split) was
-not present in the project materials and therefore is not claimed as
-independently reproducible by this release. See `data/README.md`.
+The exact Chapman experiment metadata, 45-code mapping, exclusions, deterministic
+split generator, and frozen 31,460/6,741/6,742 recording-level assignment are
+included under `data/chapman/`. See `data/README.md` for the raw-waveform
+download and the important limitation that this is not a patient-level split.
 
 ## What's not included
 
-- **Raw datasets** (`data/`): public PhysioNet resources, not re-hosted here
-  (see `data/README.md`).
+- **Raw waveform datasets**: public PhysioNet resources, not re-hosted here
+  (see `data/README.md`). Compact derived Chapman metadata is included.
 - **Model checkpoints** (`checkpoints/`): not included due to size; retrain
   with `experiments/run_block_a.sh` / the InceptionTime training scripts.
 - **Most per-(method, seed) prediction logits** (`results/cal_probs/*.npz`,

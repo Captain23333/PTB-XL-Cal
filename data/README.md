@@ -1,8 +1,10 @@
 # Data
 
-This project uses two publicly available ECG datasets. Neither is redistributed
-in this repository -- both are already open-access on PhysioNet under their own
-licenses, so we only document how to fetch them and where to place them.
+This project uses two publicly available ECG datasets. Raw waveforms are not
+redistributed in this repository because both datasets are already archived on
+PhysioNet under their own licenses. We include only the compact, derived
+Chapman-Shaoxing metadata needed to reproduce the published external-cohort
+analysis.
 
 ## 1. PTB-XL (primary dataset, all main experiments)
 
@@ -61,17 +63,29 @@ wget -r -N -c -np https://physionet.org/files/ecg-arrhythmia/1.0.0/
 file must contain `record_path`, `split`, and the five binary columns `NORM`,
 `MI`, `STTC`, `CD`, and `HYP`.
 
-Important reproducibility limitation: the historical metadata file, its exact
-47-SNOMED-code-to-family mapping, and its frozen 70/15/15 assignment were not
-present in the project materials from which this public package was assembled.
-The training and calibration scripts consume that file but do not generate it.
-The release therefore includes the audited aggregate Chapman results without
-claiming that the exact external-validation split can presently be recreated.
-Do not substitute a newly generated split and describe it as the published
-split; archive the original metadata or rerun and clearly version a replacement
-before making a full external-reproducibility claim.
+The release contains the exact experiment inputs:
 
-## Why data isn't included in this repository
+- `chapman/chapman_metadata.csv`: 44,943 analyzable recordings and the frozen
+  train/validation/test assignment (31,460/6,741/6,742);
+- `chapman/build_dataset.py`: the 45-code SNOMED-CT-to-family mapping and the
+  deterministic recording-level split generator (`numpy` seed 42);
+- `chapman/ConditionNames_SNOMED-CT.csv`: the source diagnosis-code dictionary;
+- `chapman/corrupt_records.txt`: the nine explicitly excluded record IDs.
+
+After downloading and flattening the PhysioNet files, run:
+
+```bash
+python data/chapman/build_dataset.py
+```
+
+The frozen metadata shipped here has SHA-256
+`a85635d26bfbb91ec476e44567ce1e3eb205483828ccfff0ce480e9a10fc690d`.
+The split is a deterministic random **recording-level**, not label-stratified
+or patient-level, 70/15/15 split. The released PhysioNet headers used by the
+builder expose age, sex, and diagnosis codes but no patient identifier, so this
+external-cohort analysis must not be described as a patient-independent split.
+
+## Why raw waveforms aren't included in this repository
 
 Both datasets are already permanently and publicly archived on PhysioNet with
 their own DOIs and licenses. Re-hosting them here would duplicate a public
