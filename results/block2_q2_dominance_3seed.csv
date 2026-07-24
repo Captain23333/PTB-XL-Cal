@@ -1,0 +1,9 @@
+method,calibrator,ref_method,ref_calibrator,n_seeds,dominance_seed42,dominance_seed123,dominance_seed2024,dominance_mean,dominance_std,dominance_min,dominance_max
+soft,C5_isotonic,hard_bce,C5_isotonic,3,0.024,0.152,0.022,0.06599999999999999,0.06081666438293592,0.022,0.152
+asl,C5_isotonic,hard_bce,C5_isotonic,3,0.09,0.084,0.02,0.06466666666666666,0.03167894498804459,0.02,0.09
+focal,C5_isotonic,hard_bce,C5_isotonic,3,0.064,0.036,0.054,0.051333333333333335,0.011585431464655179,0.036,0.064
+ecgfm_linprobe,C5_isotonic,hard_bce,C5_isotonic,1,0.036,,,0.036,0.0,0.036,0.036
+label_smooth,C5_isotonic,hard_bce,C5_isotonic,3,0.002,0.0,0.0,0.0006666666666666666,0.0009428090415820634,0.0,0.002
+chmc_coh,C5_isotonic,hard_bce,C5_isotonic,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+scp_soft_full,C5_isotonic,hard_bce,C5_isotonic,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+soft_parent_ord,C5_isotonic,hard_bce,C5_isotonic,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,6 @@
+row_label,method,macro_auc,macro_auc_std,macro_brier,macro_brier_std,macro_ece,macro_ece_std,hvr,hvr_std
+row1: hard-BCE,hard_bce,0.9182,0.005,0.0113,0.0001,0.0144,0.0015,0.1942,0.0273
+row2: + stmt-soft,soft,0.9157,0.0013,0.0113,0.0002,0.0135,0.0012,0.1917,0.0305
+row3: + parent-soft heads,soft_parent,0.8949,0.0018,0.0116,0.0002,0.013,0.0018,0.1807,0.0235
+row4: + ordinal CORN,soft_parent_ord,0.8779,0.0022,0.0122,0.0004,0.0134,0.0016,0.1877,0.0373
+row5: + hierarchy (full),scp_soft_full,0.8804,0.0014,0.0123,0.0004,0.0144,0.0028,0.1596,0.0118

@@ -1,0 +1,9 @@
+method,macro_auprc
+asl,0.3773
+chmc_coh,0.3554
+focal,0.393
+hard_bce,0.4029
+hard_bce+dir,0.4029
+hard_bce+temp,0.4029
+label_smooth,0.3793
+scp_soft_full,0.3104

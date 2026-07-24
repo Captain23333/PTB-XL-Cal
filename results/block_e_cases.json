@@ -1,0 +1,12 @@
+{
+  "MI": {
+    "ecg_idx": 24,
+    "target_stmt": "ASMI",
+    "target_lik": 50
+  },
+  "HYP": {
+    "ecg_idx": 24,
+    "target_stmt": "LVH",
+    "target_lik": 50
+  }
+}

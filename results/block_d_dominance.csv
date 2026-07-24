@@ -1,0 +1,8 @@
+baseline,wins,losses,dominance_freq,ci_lo,ci_hi,n_bootstrap
+hard_bce,0,500,0.0,0.0,0.0,500
+asl,0,500,0.0,0.0,0.0,500
+focal,0,500,0.0,0.0,0.0,500
+label_smooth,12,488,0.024,0.0106,0.0374,500
+hard_bce+temp,0,500,0.0,0.0,0.0,500
+hard_bce+dir,0,500,0.0,0.0,0.0,500
+chmc_coh,0,500,0.0,0.0,0.0,500

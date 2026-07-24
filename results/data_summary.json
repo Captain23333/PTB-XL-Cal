@@ -1,0 +1,110 @@
+{
+  "total_records": 21799,
+  "unique_patients": 18869,
+  "patients_with_multi_records": 2111,
+  "fold_counts": {
+    "1": 2175,
+    "2": 2181,
+    "3": 2192,
+    "4": 2174,
+    "5": 2174,
+    "6": 2173,
+    "7": 2176,
+    "8": 2173,
+    "9": 2183,
+    "10": 2198
+  },
+  "train_folds_1_8_count": 17418,
+  "val_fold_9_count": 2183,
+  "test_fold_10_count": 2198,
+  "per_fold_super_class_counts": {
+    "1": {
+      "CD": 481,
+      "HYP": 263,
+      "MI": 549,
+      "NORM": 940,
+      "STTC": 518
+    },
+    "2": {
+      "CD": 485,
+      "HYP": 264,
+      "MI": 538,
+      "NORM": 967,
+      "STTC": 509
+    },
+    "3": {
+      "CD": 487,
+      "HYP": 264,
+      "MI": 528,
+      "NORM": 991,
+      "STTC": 505
+    },
+    "4": {
+      "CD": 494,
+      "HYP": 261,
+      "MI": 551,
+      "NORM": 927,
+      "STTC": 513
+    },
+    "5": {
+      "CD": 496,
+      "HYP": 265,
+      "MI": 563,
+      "NORM": 939,
+      "STTC": 513
+    },
+    "6": {
+      "CD": 494,
+      "HYP": 270,
+      "MI": 562,
+      "NORM": 930,
+      "STTC": 515
+    },
+    "7": {
+      "CD": 478,
+      "HYP": 264,
+      "MI": 550,
+      "NORM": 970,
+      "STTC": 510
+    },
+    "8": {
+      "CD": 492,
+      "HYP": 268,
+      "MI": 538,
+      "NORM": 932,
+      "STTC": 504
+    },
+    "9": {
+      "CD": 495,
+      "HYP": 268,
+      "MI": 540,
+      "NORM": 955,
+      "STTC": 515
+    },
+    "10": {
+      "CD": 496,
+      "HYP": 262,
+      "MI": 550,
+      "NORM": 963,
+      "STTC": 506
+    }
+  },
+  "n_super_classes": 5,
+  "n_sub_classes": 23,
+  "n_diagnostic_stmts": 44,
+  "n_non_diagnostic_stmts": 27,
+  "n_total_stmts": 71,
+  "n_hierarchy_edges": 67,
+  "likelihood_values_present": [
+    0,
+    10,
+    14,
+    15,
+    30,
+    34,
+    35,
+    50,
+    80,
+    100
+  ]
+}

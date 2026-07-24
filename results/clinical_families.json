@@ -1,0 +1,56 @@
+{
+  "CD": [
+    "LAFB",
+    "IRBBB",
+    "1AVB",
+    "IVCD",
+    "CRBBB",
+    "CLBBB",
+    "LPFB",
+    "WPW",
+    "ILBBB",
+    "3AVB",
+    "2AVB"
+  ],
+  "HYP": [
+    "LVH",
+    "LAO/LAE",
+    "RVH",
+    "RAO/RAE",
+    "SEHYP"
+  ],
+  "MI": [
+    "IMI",
+    "ASMI",
+    "ILMI",
+    "AMI",
+    "ALMI",
+    "INJAS",
+    "LMI",
+    "INJAL",
+    "IPLMI",
+    "IPMI",
+    "INJIN",
+    "INJLA",
+    "PMI",
+    "INJIL"
+  ],
+  "NORM": [
+    "NORM"
+  ],
+  "STTC": [
+    "NDT",
+    "NST_",
+    "DIG",
+    "LNGQT",
+    "ISC_",
+    "ISCAL",
+    "ISCIN",
+    "ISCIL",
+    "ISCAS",
+    "ISCLA",
+    "ANEUR",
+    "EL",
+    "ISCAN"
+  ]
+}

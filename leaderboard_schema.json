@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PTB-XL-Cal leaderboard.json schema",
+  "description": "Locked schema (PTB-XL-Cal R1, protocol_version=1.0)",
+  "type": "object",
+  "required": ["protocol_version", "ece_protocol", "selection_rule", "results"],
+  "properties": {
+    "protocol_version": {"type": "string", "enum": ["1.0"]},
+    "ece_protocol": {"type": "string"},
+    "selection_rule": {"type": "string", "enum": ["lex_ECE_threshold_AUC_param"]},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["method", "calibrator", "seed", "backbone",
+                      "macro_auc", "labelwise_ece", "macro_brier",
+                      "calib_slope", "calib_intercept",
+                      "threshold_transfer_gap_at_sens_0.9",
+                      "family_ece", "excluded_statements"],
+        "properties": {
+          "method": {"type": "string"},
+          "calibrator": {"type": "string", "enum": [
+            "C0_raw", "C1_temp_scalar", "C2_temp_per_label",
+            "C3_per_label_affine", "C4_family_affine", "C5_isotonic"
+          ]},
+          "seed": {"type": "integer"},
+          "backbone": {"type": "string"},
+          "is_selected": {"type": "boolean"},
+          "macro_auc": {"type": "number"},
+          "labelwise_ece": {"type": "number"},
+          "macro_brier": {"type": "number"},
+          "calib_slope": {"type": ["number", "null"]},
+          "calib_intercept": {"type": ["number", "null"]},
+          "threshold_transfer_gap_at_sens_0.9": {"type": "number"},
+          "family_ece": {
+            "type": "object",
+            "required": ["NORM", "MI", "STTC", "CD", "HYP"],
+            "additionalProperties": {"type": ["number", "null"]}
+          },
+          "excluded_statements": {
+            "type": "array",
+            "items": {"type": "integer"}
+          },
+          "n_params": {"type": "integer"},
+          "selection_trace": {"type": ["object", "null"]}
+        }
+      }
+    }
+  }
+}

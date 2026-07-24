@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Data (downloaded separately, see data/README.md)
+data/*
+!data/README.md
+
+# Large / regenerable artifacts
+checkpoints/
+results/cal_probs/*
+*.npz
+!results/cal_probs/probs_hard_bce_seed42.npz
+logs/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/

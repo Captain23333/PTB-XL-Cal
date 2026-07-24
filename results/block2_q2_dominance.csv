@@ -1,0 +1,9 @@
+method,calibrator,seed_used,ref_method,ref_calibrator,dominance_prob_3d
+asl,C5_isotonic,42,hard_bce,C5_isotonic,0.09
+focal,C5_isotonic,42,hard_bce,C5_isotonic,0.064
+label_smooth,C5_isotonic,42,hard_bce,C5_isotonic,0.002
+chmc_coh,C5_isotonic,42,hard_bce,C5_isotonic,0.0
+scp_soft_full,C5_isotonic,42,hard_bce,C5_isotonic,0.0
+soft,C5_isotonic,42,hard_bce,C5_isotonic,0.024
+soft_parent_ord,C5_isotonic,42,hard_bce,C5_isotonic,0.0
+ecgfm_linprobe,C5_isotonic,42,hard_bce,C5_isotonic,0.036

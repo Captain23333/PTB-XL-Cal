@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+scikit-learn
+statsmodels
+matplotlib
+seaborn
+torch
+wfdb
+transformers
+huggingface_hub

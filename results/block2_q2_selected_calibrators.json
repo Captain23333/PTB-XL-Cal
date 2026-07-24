@@ -1,0 +1,101 @@
+{
+  "hard_bce": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.00040661913423168056
+    }
+  },
+  "asl": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.0003349545340270762
+    }
+  },
+  "focal": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.00036458579051786905
+    }
+  },
+  "label_smooth": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.0003833546933459146
+    }
+  },
+  "chmc_coh": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.0004684696259475622
+    }
+  },
+  "scp_soft_full": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.000341316037852404
+    }
+  },
+  "soft": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.0003787083589544918
+    }
+  },
+  "soft_parent_ord": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.0003995896309707202
+    }
+  },
+  "ecgfm_linprobe": {
+    "best": "C5_isotonic",
+    "second": "C3_per_label_affine",
+    "trace": {
+      "trace": "ece_unique",
+      "band": [
+        "C5_isotonic"
+      ],
+      "se": 0.0003259967676465434
+    }
+  }
+}

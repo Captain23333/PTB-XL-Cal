@@ -1,0 +1,636 @@
+{
+  "super_classes": [
+    "CD",
+    "HYP",
+    "MI",
+    "NORM",
+    "STTC"
+  ],
+  "sub_classes": [
+    "AMI",
+    "CLBBB",
+    "CRBBB",
+    "ILBBB",
+    "IMI",
+    "IRBBB",
+    "ISCA",
+    "ISCI",
+    "ISC_",
+    "IVCD",
+    "LAFB/LPFB",
+    "LAO/LAE",
+    "LMI",
+    "LVH",
+    "NORM",
+    "NST_",
+    "PMI",
+    "RAO/RAE",
+    "RVH",
+    "SEHYP",
+    "STTC",
+    "WPW",
+    "_AVB"
+  ],
+  "diag_stmts": [
+    "NDT",
+    "NST_",
+    "DIG",
+    "LNGQT",
+    "NORM",
+    "IMI",
+    "ASMI",
+    "LVH",
+    "LAFB",
+    "ISC_",
+    "IRBBB",
+    "1AVB",
+    "IVCD",
+    "ISCAL",
+    "CRBBB",
+    "CLBBB",
+    "ILMI",
+    "LAO/LAE",
+    "AMI",
+    "ALMI",
+    "ISCIN",
+    "INJAS",
+    "LMI",
+    "ISCIL",
+    "LPFB",
+    "ISCAS",
+    "INJAL",
+    "ISCLA",
+    "RVH",
+    "ANEUR",
+    "RAO/RAE",
+    "EL",
+    "WPW",
+    "ILBBB",
+    "IPLMI",
+    "ISCAN",
+    "IPMI",
+    "SEHYP",
+    "INJIN",
+    "INJLA",
+    "PMI",
+    "3AVB",
+    "INJIL",
+    "2AVB"
+  ],
+  "all_stmts": [
+    "NDT",
+    "NST_",
+    "DIG",
+    "LNGQT",
+    "NORM",
+    "IMI",
+    "ASMI",
+    "LVH",
+    "LAFB",
+    "ISC_",
+    "IRBBB",
+    "1AVB",
+    "IVCD",
+    "ISCAL",
+    "CRBBB",
+    "CLBBB",
+    "ILMI",
+    "LAO/LAE",
+    "AMI",
+    "ALMI",
+    "ISCIN",
+    "INJAS",
+    "LMI",
+    "ISCIL",
+    "LPFB",
+    "ISCAS",
+    "INJAL",
+    "ISCLA",
+    "RVH",
+    "ANEUR",
+    "RAO/RAE",
+    "EL",
+    "WPW",
+    "ILBBB",
+    "IPLMI",
+    "ISCAN",
+    "IPMI",
+    "SEHYP",
+    "INJIN",
+    "INJLA",
+    "PMI",
+    "3AVB",
+    "INJIL",
+    "2AVB",
+    "ABQRS",
+    "PVC",
+    "STD_",
+    "VCLVH",
+    "QWAVE",
+    "LOWT",
+    "NT_",
+    "PAC",
+    "LPR",
+    "INVT",
+    "LVOLT",
+    "HVOLT",
+    "TAB_",
+    "STE_",
+    "PRC(S)",
+    "SR",
+    "AFIB",
+    "STACH",
+    "SARRH",
+    "SBRAD",
+    "PACE",
+    "SVARR",
+    "BIGU",
+    "AFLT",
+    "SVTAC",
+    "PSVT",
+    "TRIGU"
+  ],
+  "non_diag_stmts": [
+    "ABQRS",
+    "PVC",
+    "STD_",
+    "VCLVH",
+    "QWAVE",
+    "LOWT",
+    "NT_",
+    "PAC",
+    "LPR",
+    "INVT",
+    "LVOLT",
+    "HVOLT",
+    "TAB_",
+    "STE_",
+    "PRC(S)",
+    "SR",
+    "AFIB",
+    "STACH",
+    "SARRH",
+    "SBRAD",
+    "PACE",
+    "SVARR",
+    "BIGU",
+    "AFLT",
+    "SVTAC",
+    "PSVT",
+    "TRIGU"
+  ],
+  "super_to_sub": {
+    "AMI": "MI",
+    "CLBBB": "CD",
+    "CRBBB": "CD",
+    "ILBBB": "CD",
+    "IMI": "MI",
+    "IRBBB": "CD",
+    "ISCA": "STTC",
+    "ISCI": "STTC",
+    "ISC_": "STTC",
+    "IVCD": "CD",
+    "LAFB/LPFB": "CD",
+    "LAO/LAE": "HYP",
+    "LMI": "MI",
+    "LVH": "HYP",
+    "NORM": "NORM",
+    "NST_": "STTC",
+    "PMI": "MI",
+    "RAO/RAE": "HYP",
+    "RVH": "HYP",
+    "SEHYP": "HYP",
+    "STTC": "STTC",
+    "WPW": "CD",
+    "_AVB": "CD"
+  },
+  "sub_to_stmts": {
+    "AMI": [
+      "ASMI",
+      "AMI",
+      "ALMI",
+      "INJAS",
+      "INJAL",
+      "INJLA"
+    ],
+    "CLBBB": [
+      "CLBBB"
+    ],
+    "CRBBB": [
+      "CRBBB"
+    ],
+    "ILBBB": [
+      "ILBBB"
+    ],
+    "IMI": [
+      "IMI",
+      "ILMI",
+      "IPLMI",
+      "IPMI",
+      "INJIN",
+      "INJIL"
+    ],
+    "IRBBB": [
+      "IRBBB"
+    ],
+    "ISCA": [
+      "ISCAL",
+      "ISCAS",
+      "ISCLA",
+      "ISCAN"
+    ],
+    "ISCI": [
+      "ISCIN",
+      "ISCIL"
+    ],
+    "ISC_": [
+      "ISC_"
+    ],
+    "IVCD": [
+      "IVCD"
+    ],
+    "LAFB/LPFB": [
+      "LAFB",
+      "LPFB"
+    ],
+    "LAO/LAE": [
+      "LAO/LAE"
+    ],
+    "LMI": [
+      "LMI"
+    ],
+    "LVH": [
+      "LVH"
+    ],
+    "NORM": [
+      "NORM"
+    ],
+    "NST_": [
+      "NST_"
+    ],
+    "PMI": [
+      "PMI"
+    ],
+    "RAO/RAE": [
+      "RAO/RAE"
+    ],
+    "RVH": [
+      "RVH"
+    ],
+    "SEHYP": [
+      "SEHYP"
+    ],
+    "STTC": [
+      "NDT",
+      "DIG",
+      "LNGQT",
+      "ANEUR",
+      "EL"
+    ],
+    "WPW": [
+      "WPW"
+    ],
+    "_AVB": [
+      "1AVB",
+      "3AVB",
+      "2AVB"
+    ]
+  },
+  "edges": [
+    {
+      "parent": "MI",
+      "child": "AMI",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "CLBBB",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "CRBBB",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "ILBBB",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "MI",
+      "child": "IMI",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "IRBBB",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "STTC",
+      "child": "ISCA",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "STTC",
+      "child": "ISCI",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "STTC",
+      "child": "ISC_",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "IVCD",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "LAFB/LPFB",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "HYP",
+      "child": "LAO/LAE",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "MI",
+      "child": "LMI",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "HYP",
+      "child": "LVH",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "NORM",
+      "child": "NORM",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "STTC",
+      "child": "NST_",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "MI",
+      "child": "PMI",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "HYP",
+      "child": "RAO/RAE",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "HYP",
+      "child": "RVH",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "HYP",
+      "child": "SEHYP",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "STTC",
+      "child": "STTC",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "WPW",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "CD",
+      "child": "_AVB",
+      "level": "super_to_sub"
+    },
+    {
+      "parent": "AMI",
+      "child": "ASMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "AMI",
+      "child": "AMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "AMI",
+      "child": "ALMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "AMI",
+      "child": "INJAS",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "AMI",
+      "child": "INJAL",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "AMI",
+      "child": "INJLA",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "CLBBB",
+      "child": "CLBBB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "CRBBB",
+      "child": "CRBBB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ILBBB",
+      "child": "ILBBB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IMI",
+      "child": "IMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IMI",
+      "child": "ILMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IMI",
+      "child": "IPLMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IMI",
+      "child": "IPMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IMI",
+      "child": "INJIN",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IMI",
+      "child": "INJIL",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IRBBB",
+      "child": "IRBBB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISCA",
+      "child": "ISCAL",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISCA",
+      "child": "ISCAS",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISCA",
+      "child": "ISCLA",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISCA",
+      "child": "ISCAN",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISCI",
+      "child": "ISCIN",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISCI",
+      "child": "ISCIL",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "ISC_",
+      "child": "ISC_",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "IVCD",
+      "child": "IVCD",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "LAFB/LPFB",
+      "child": "LAFB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "LAFB/LPFB",
+      "child": "LPFB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "LAO/LAE",
+      "child": "LAO/LAE",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "LMI",
+      "child": "LMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "LVH",
+      "child": "LVH",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "NORM",
+      "child": "NORM",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "NST_",
+      "child": "NST_",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "PMI",
+      "child": "PMI",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "RAO/RAE",
+      "child": "RAO/RAE",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "RVH",
+      "child": "RVH",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "SEHYP",
+      "child": "SEHYP",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "STTC",
+      "child": "NDT",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "STTC",
+      "child": "DIG",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "STTC",
+      "child": "LNGQT",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "STTC",
+      "child": "ANEUR",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "STTC",
+      "child": "EL",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "WPW",
+      "child": "WPW",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "_AVB",
+      "child": "1AVB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "_AVB",
+      "child": "3AVB",
+      "level": "sub_to_stmt"
+    },
+    {
+      "parent": "_AVB",
+      "child": "2AVB",
+      "level": "sub_to_stmt"
+    }
+  ]
+}
