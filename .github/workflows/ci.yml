@@ -1,0 +1,19 @@
+name: calibration-self-test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+      - name: Install pinned environment
+        run: python -m pip install -r requirements.txt
+      - name: Run data-independent calibration self-test
+        run: python eval_calibration.py --ci-test

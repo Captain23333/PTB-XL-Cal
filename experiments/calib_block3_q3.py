@@ -8,7 +8,7 @@ calibrator. For each (method, calibrator in {best, second}, family in 5):
 Failure cell = family_ECE > 2 * method's macro_ECE (with the chosen calibrator).
 Save:
   results/block3_q3_family.csv
-  results/block3_q3_family_strict.csv  (pre-registered 80-cell primary subset:
+  results/block3_q3_family_strict.csv  (prespecified 80-cell primary subset:
       8 base methods x {C5_isotonic, C3_per_label_affine} x 5 families; this
       is the subset paper_figures.py / paper text use for the "16/16 NORM"
       headline claim -- reconstructed here as a deterministic filter of

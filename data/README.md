@@ -1,16 +1,18 @@
 # Data
 
-This project uses two publicly available ECG datasets. Neither is redistributed
-in this repository -- both are already open-access on PhysioNet under their own
-licenses, so we only document how to fetch them and where to place them.
+This project uses two publicly available ECG datasets. Raw waveforms are not
+redistributed in this repository because both datasets are already archived on
+PhysioNet under their own licenses. We include only the compact, derived
+Chapman-Shaoxing metadata needed to reproduce the published external-cohort
+analysis.
 
 ## 1. PTB-XL (primary dataset, all main experiments)
 
 - Source: PhysioNet, "PTB-XL, a large publicly available electrocardiography
   dataset", version 1.0.3.
 - Page: https://physionet.org/content/ptb-xl/1.0.3/
-- License: Open Data Commons Attribution License v1.0 (see the `LICENSE.txt`
-  included in the PhysioNet download).
+- License: Creative Commons Attribution 4.0 International.
+- DOI: https://doi.org/10.13026/kfzx-aw45
 - Citation: Wagner et al., "PTB-XL, a large publicly available
   electrocardiography dataset", Scientific Data, 2020.
 
@@ -45,7 +47,8 @@ download straight into `data/`.
 - Source: PhysioNet, "A large scale 12-lead electrocardiogram database for
   arrhythmia study", version 1.0.0.
 - Page: https://physionet.org/content/ecg-arrhythmia/1.0.0/
-- License: Open Data Commons Attribution License v1.0.
+- License: Creative Commons Attribution 4.0 International.
+- DOI: https://doi.org/10.13026/wgex-er52
 - Citation: Zheng et al., "A 12-lead electrocardiogram database for arrhythmia
   research covering more than 10,000 patients", Scientific Data, 2020.
 
@@ -55,13 +58,34 @@ cd data/chapman
 wget -r -N -c -np https://physionet.org/files/ecg-arrhythmia/1.0.0/
 ```
 
-`src/data_chapman.py` expects the flattened records plus a
-`chapman_metadata.csv` file under `data/chapman/` (built by
-`experiments/train_chapman.py` / `experiments/calib_chapman.py` from the raw
-PhysioNet metadata -- see the header comments in those scripts for the exact
-label-mapping and train/test split logic used).
+`src/data_chapman.py` expects the flattened records plus the exact
+`chapman_metadata.csv` used by the experiment under `data/chapman/`. That
+file must contain `record_path`, `split`, and the five binary columns `NORM`,
+`MI`, `STTC`, `CD`, and `HYP`.
 
-## Why data isn't included in this repository
+The release contains the exact experiment inputs:
+
+- `chapman/chapman_metadata.csv`: 44,943 analyzable recordings and the frozen
+  train/validation/test assignment (31,460/6,741/6,742);
+- `chapman/build_dataset.py`: the 45-code SNOMED-CT-to-family mapping and the
+  deterministic recording-level split generator (`numpy` seed 42);
+- `chapman/ConditionNames_SNOMED-CT.csv`: the source diagnosis-code dictionary;
+- `chapman/corrupt_records.txt`: the nine explicitly excluded record IDs.
+
+After downloading and flattening the PhysioNet files, run:
+
+```bash
+python data/chapman/build_dataset.py
+```
+
+The frozen metadata shipped here has SHA-256
+`a85635d26bfbb91ec476e44567ce1e3eb205483828ccfff0ce480e9a10fc690d`.
+The split is a deterministic random **recording-level**, not label-stratified
+or patient-level, 70/15/15 split. The released PhysioNet headers used by the
+builder expose age, sex, and diagnosis codes but no patient identifier, so this
+external-cohort analysis must not be described as a patient-independent split.
+
+## Why raw waveforms aren't included in this repository
 
 Both datasets are already permanently and publicly archived on PhysioNet with
 their own DOIs and licenses. Re-hosting them here would duplicate a public

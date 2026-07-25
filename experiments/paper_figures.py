@@ -559,7 +559,7 @@ def latex_includes():
          r"  \centering",
          r"  \includegraphics[width=\linewidth]{figures/fig2_norm_failure_mode.pdf}",
          r"  \caption{\textbf{Q3 — calibration failure is concentrated in the NORM family.} ",
-         r"  Left: NORM family ECE divided by the method's macro ECE, for the strict pre-registered subset of 8 base methods $\times$ top-2 calibrators by lex selector. Ratios $\geq 2$ are pre-registered ``failure cells'' — 16/16 cells fall in NORM. ",
+         r"  Left: NORM family ECE divided by the method's macro ECE, for the strict prespecified subset of 8 base methods $\times$ top-2 calibrators by lex selector. Ratios $\geq 2$ are prespecified ``failure cells'' — 16/16 cells fall in NORM. ",
          r"  Right: per-method family-ECE max, mean, and worst non-NORM (3-seed mean). The max is consistently NORM-driven; worst non-NORM is $\leq$ each method's macro ECE, ruling out broad multi-family heterogeneity.}",
          r"  \label{fig:norm}",
          r"\end{figure}"),
@@ -586,7 +586,7 @@ def latex_includes():
          r"  \centering",
          r"  \includegraphics[width=0.85\linewidth]{figures/figS3_q4_monotonic_tie.pdf}",
          r"  \caption{\textbf{Appendix: Q4 operating-point stability probe is mis-specified for monotonic calibrators.} ",
-         r"  For every (method, seed) cell, the 5 monotonic calibrators C0--C4 produce \emph{identical} sens-gap @ 0.9 (verified 25/25 cells). Only the non-monotonic isotonic C5 moves the gap. The pre-registered Spearman $\rho$ statistic therefore measures an isotonic-vs-monotonic-family binary distinction, not a continuous calibration $\to$ stability relationship. We demote Q4 to this appendix and reframe as ``calibration-family invariance of operating-point stability under monotonic transforms.''}",
+         r"  For every (method, seed) cell, the 5 monotonic calibrators C0--C4 produce \emph{identical} sens-gap @ 0.9 (verified 25/25 cells). Only the non-monotonic isotonic C5 moves the gap. The internally prespecified Spearman $\rho$ statistic therefore measures an isotonic-vs-monotonic-family binary distinction, not a continuous calibration $\to$ stability relationship. We demote Q4 to this appendix and reframe as ``calibration-family invariance of operating-point stability under monotonic transforms.''}",
          r"  \label{fig:q4tie}",
          r"\end{figure}"),
     ]

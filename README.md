@@ -1,21 +1,24 @@
 # PTB-XL-Cal: Multi-label Calibration Benchmark for ECG Classification
 
 Code release accompanying the paper "PTB-XL-Cal: A Calibration Benchmark for
-Multi-Label ECG Classification, with a Prevalence-Driven Failure Mode".
+Multi-Label ECG Classification, with a Prevalence-Associated Failure Mode".
 
-This is the **code-only** open-source package: raw datasets and trained model
-checkpoints are *not* included (see [Data](#data) and
+This open-source package contains code, compact derived metadata, frozen PTB-XL
+split files, and aggregate results. Raw waveforms and trained model checkpoints
+are *not* included (see [Data](#data) and
 [What's not included](#whats-not-included) below for why, and how to get them).
 
 ## What this benchmarks
 
 Six post-hoc probability calibrators (C0 raw, C1 single-scalar temperature,
 C2 per-label temperature, C3 per-label affine, C4 family-pooled affine, C5
-per-label isotonic regression) applied to nine training methods across three
-backbones (SimpleResNet1D, InceptionTime, and an ECG-FM linear probe) on
-PTB-XL, with an external validation pass on Chapman-Shaoxing. Full protocol
-details are in the paper; the locked metric suite and selection rule are
-implemented in `src/calibration_metrics.py` and `src/calib_pipeline.py`.
+per-label isotonic regression) were applied to eight SimpleResNet1D training
+methods and an ECG-FM linear probe (150 primary evaluations). A hard-BCE
+InceptionTime check added 18 architecture-transfer evaluations; it was not
+run across all training methods. Chapman-Shaoxing was used only for the
+external prevalence-associated check. Full protocol details are in the paper;
+the locked metric suite and selection rule are implemented in
+`src/calibration_metrics.py` and `src/calib_pipeline.py`.
 
 ## Repository layout
 
@@ -45,7 +48,8 @@ results/                Small summary CSV/JSON outputs (one row per
                          method x seed x calibrator x metric); this is what the
                          paper's tables and figures are built from. One compact
                          hard-BCE prediction fixture is included for self-test.
-data/                   Not included -- see data/README.md for download steps
+data/                   Download instructions plus frozen Chapman metadata,
+                        mapping, exclusions, and split generator
 ```
 
 ## Environment
@@ -54,8 +58,10 @@ data/                   Not included -- see data/README.md for download steps
 pip install -r requirements.txt
 ```
 
-Tested with Python 3.11 and PyTorch with CUDA 12.1, but nothing here is
-CUDA-version-specific.
+The reconstructed release environment uses Python 3.10 and the pinned package
+versions in `requirements.txt`, including PyTorch 2.4.0. The evaluation
+self-test is CPU-compatible; full model training can use a compatible CUDA
+installation.
 
 Optionally set these environment variables if you don't want to run from the
 repository root:
@@ -114,11 +120,15 @@ analyses, see `experiments/calib_chapman.py`, `experiments/train_chapman.py`,
 `experiments/calib_inceptiontime*.py`, `experiments/calib_prevalence_ablation.py`,
 `experiments/calib_ece_robustness.py`, and `experiments/calib_selector_stability.py`
 respectively -- each has a docstring describing exactly what it computes.
+The exact Chapman experiment metadata, 45-code mapping, exclusions, deterministic
+split generator, and frozen 31,460/6,741/6,742 recording-level assignment are
+included under `data/chapman/`. See `data/README.md` for the raw-waveform
+download and the important limitation that this is not a patient-level split.
 
 ## What's not included
 
-- **Raw datasets** (`data/`): public PhysioNet resources, not re-hosted here
-  (see `data/README.md`).
+- **Raw waveform datasets**: public PhysioNet resources, not re-hosted here
+  (see `data/README.md`). Compact derived Chapman metadata is included.
 - **Model checkpoints** (`checkpoints/`): not included due to size; retrain
   with `experiments/run_block_a.sh` / the InceptionTime training scripts.
 - **Most per-(method, seed) prediction logits** (`results/cal_probs/*.npz`,

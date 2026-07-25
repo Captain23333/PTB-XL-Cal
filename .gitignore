@@ -5,6 +5,11 @@ __pycache__/
 # Data (downloaded separately, see data/README.md)
 data/*
 !data/README.md
+!data/chapman/
+!data/chapman/ConditionNames_SNOMED-CT.csv
+!data/chapman/build_dataset.py
+!data/chapman/chapman_metadata.csv
+!data/chapman/corrupt_records.txt
 
 # Large / regenerable artifacts
 checkpoints/
